@@ -73,8 +73,11 @@ return require("packer").startup(
     use "tpope/vim-fugitive"
 
     -- Comment
-    use "tpope/vim-commentary"
-    use "JoosepAlviste/nvim-ts-context-commentstring"
+    use "numToStr/Comment.nvim"
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim"
+    }
 
     -- Formatting
     use "mhartington/formatter.nvim"

@@ -1,6 +1,2 @@
-require'nvim-treesitter.configs'.setup {
-  context_commentstring = {
-    enable = true
-  }
-}
-
+require("Comment").setup()
+require("todo-comments").setup {}
