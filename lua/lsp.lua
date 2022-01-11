@@ -1,5 +1,5 @@
 local lspconfig = require("lspconfig")
-local servers = require("servers")
+local servers = {"ccls", "pyright", "tsserver"}
 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
