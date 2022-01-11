@@ -4,6 +4,7 @@ nest.applyKeymaps {
   {
     "<leader>",
     {
+      {"bd", "<cmd>bd<cr>"},
       {"e", "<cmd>Trouble<cr>"},
       {
         "f",
@@ -11,7 +12,7 @@ nest.applyKeymaps {
           {"f", "<cmd>Telescope find_files<cr>"},
           {"h", "<cmd>Telescope help_tags<cr>"},
           {"j", "<cmd>Telescope buffers<cr>"},
-          {"m", "<cmd>Format<cr>"}
+          {"m", "<cmd>lua vim.lsp.buf.formatting_sync()<cr>"}
         }
       },
       {"g", "<cmd>tab G<cr>"},
@@ -27,12 +28,6 @@ nest.applyKeymaps {
       },
       {"rn", "<cmd>lua vim.lsp.buf.rename()<cr>"},
       {"qn", "<cmd>wqa<cr>"},
-      {
-        "v",
-        {
-          {"s", "<cmd>vs<cr>"}
-        }
-      },
       {"w", "<cmd>w<cr>"},
       {"x", "<c-w>q"}
     }

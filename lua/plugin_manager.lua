@@ -13,10 +13,13 @@ return require("packer").startup(
 
     -- LSP
     use "neovim/nvim-lspconfig"
-    use {"glepnir/lspsaga.nvim", requires = "neovim/nvim-lspconfig"}
     use {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons"
+    }
+    use {
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = "nvim-lua/plenary.nvim"
     }
 
     -- Completion
@@ -38,6 +41,7 @@ return require("packer").startup(
     use "rafamadriz/friendly-snippets"
 
     -- Fuzzy Finder
+
     use {"nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim"}
 
     -- Color
@@ -51,6 +55,7 @@ return require("packer").startup(
 
     -- Utility
     use "jghauser/mkdir.nvim"
+    use "tpope/vim-eunuch"
     use "tpope/vim-unimpaired"
 
     -- Neovim Lua Development
@@ -78,9 +83,6 @@ return require("packer").startup(
       "folke/todo-comments.nvim",
       requires = "nvim-lua/plenary.nvim"
     }
-
-    -- Formatting
-    use "mhartington/formatter.nvim"
 
     -- Session
     use "rmagatti/auto-session"
