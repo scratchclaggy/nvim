@@ -1,5 +1,5 @@
 --Plugin Manager
-require("plugin_manager") 
+require("plugin_manager")
 
 -- Settings and Keybindings
 require("settings")
@@ -16,4 +16,5 @@ require("statusline")
 require("indent")
 require("git")
 require("comment")
+require("editing")
 require("split_and_window")

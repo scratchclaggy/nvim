@@ -13,6 +13,7 @@ vim.o.ignorecase = true
 vim.o.mouse = vim.o.mouse .. "a"
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.scrolloff = 8
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages"
 vim.o.shiftwidth = indentsize
 vim.o.showmode = false

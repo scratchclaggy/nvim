@@ -1,22 +1,37 @@
 local lspconfig = require("lspconfig")
-local servers = {"ccls", "pyright", "tsserver"}
+local servers = {
+	"ccls",
+	"gopls",
+	"pyright",
+	"rust_analyzer",
+	"tailwindcss",
+	"texlab",
+	-- "tsserver",
+}
 
 for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp
-                                                                       .protocol
-                                                                       .make_client_capabilities())
-    }
+	lspconfig[lsp].setup({
+		capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	})
 end
 
-require("trouble").setup {}
+require("lspconfig").tsserver.setup({
+	capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+	on_attach = function(client)
+		client.resolved_capabilities.document_formatting = false
+		client.resolved_capabilities.document_range_formatting = false
+	end,
+})
+
+require("trouble").setup({})
 
 local null_ls = require("null-ls")
 null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.lua_format,
-        null_ls.builtins.formatting.prettier
-    }
+	sources = {
+		null_ls.builtins.formatting.black,
+		null_ls.builtins.formatting.eslint,
+		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.formatting.rustfmt,
+		null_ls.builtins.formatting.stylua,
+	},
 })
-
