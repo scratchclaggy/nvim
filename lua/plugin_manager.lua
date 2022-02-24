@@ -12,10 +12,7 @@ return require("packer").startup(function()
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	})
+	use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
@@ -57,27 +54,19 @@ return require("packer").startup(function()
 	use("nvim-lua/plenary.nvim")
 
 	-- Statusline
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-	})
+	use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- Indent
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Git
-	use({
-		"lewis6991/gitsigns.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	})
-	use("tpope/vim-fugitive")
+	use({ "tpope/vim-fugitive" })
+	use({ "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Comment
 	use("numToStr/Comment.nvim")
-	use({
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	})
+	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Session
