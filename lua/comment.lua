@@ -15,4 +15,5 @@ require("Comment").setup({
 		})
 	end,
 })
+
 require("todo-comments").setup({})

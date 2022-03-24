@@ -7,7 +7,7 @@ local servers = {
 	"rust_analyzer",
 	"tailwindcss",
 	"texlab",
-	-- "tsserver",
+	"tsserver",
 }
 
 for _, lsp in ipairs(servers) do

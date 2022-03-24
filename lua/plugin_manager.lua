@@ -13,6 +13,7 @@ return require("packer").startup(function()
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter" })
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
@@ -25,6 +26,7 @@ return require("packer").startup(function()
 	-- Syntax
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use({ "nvim-treesitter/nvim-treesitter-refactor", requires = "nvim-treesitter/nvim-treesitter" })
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("tpope/vim-surround")
 
 	-- Snippet
@@ -67,7 +69,6 @@ return require("packer").startup(function()
 	-- Comment
 	use("numToStr/Comment.nvim")
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
-	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Session
 	use("windwp/nvim-autopairs")
