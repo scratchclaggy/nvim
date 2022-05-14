@@ -5,4 +5,7 @@ require("lualine").setup({
 			path = 1,
 		} },
 	},
+	options = {
+		globalstatus = true,
+	},
 })
