@@ -1,7 +1,7 @@
 local lspconfig = require("lspconfig")
 local servers = {
 	{ language = "bashls", formatting = false },
-	{ language = "ccls", formatting = false },
+	{ language = "clangd", formatting = false },
 	{ language = "gopls", formatting = false },
 	{ language = "pyright", formatting = false },
 	{ language = "rust_analyzer", formatting = false },

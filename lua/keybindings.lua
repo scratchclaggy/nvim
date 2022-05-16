@@ -2,23 +2,23 @@ local nest = require("nest")
 vim.g.yoinkIncludeDeleteOperations = 1
 
 local replace_termcodes = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 local s_tab_complete = function()
-  if vim.fn["vsnip#jumpable"](-1) == 1 then
-    vim.fn.feedkeys(replace_termcodes("<Plug>(vsnip-jump-prev)"), "")
-    return ""
-  end
+	if vim.fn["vsnip#jumpable"](-1) == 1 then
+		vim.fn.feedkeys(replace_termcodes("<Plug>(vsnip-jump-prev)"), "")
+		return ""
+	end
 end
 
 local tab_complete = function()
-  if vim.fn["vsnip#available"](1) == 1 then
-    vim.fn.feedkeys(replace_termcodes("<Plug>(vsnip-expand-or-jump)"), "")
-    return ""
-  else
-    return replace_termcodes("<Tab>")
-  end
+	if vim.fn["vsnip#available"](1) == 1 then
+		vim.fn.feedkeys(replace_termcodes("<Plug>(vsnip-expand-or-jump)"), "")
+		return ""
+	else
+		return replace_termcodes("<Tab>")
+	end
 end
 
 nest.applyKeymaps({
@@ -59,14 +59,15 @@ nest.applyKeymaps({
 	{ "gi", vim.lsp.buf.implementation },
 	{ "K", vim.lsp.buf.hover },
 	{ "Q", "<nop>" },
-    {
-        mode = "is",
-        options = {expr = true},
-        {
-          {"<tab>", tab_complete},
-          {"<s-tab>", s_tab_complete}
-        }
-    },
+	{
+		mode = "is",
+		options = { expr = true },
+		{
+			{ "<tab>", tab_complete },
+			{ "<s-tab>", s_tab_complete },
+		},
+	},
+	{ "tlb", "<cmd>TexlabBuild<cr>" },
 	{ "<tab>", "<cmd>b#<cr>" },
 	{ "<s-tab>", "<cmd>bprevious<cr>" },
 	{ "<", "<gv", mode = "v" },
