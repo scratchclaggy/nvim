@@ -54,6 +54,9 @@ nest.applyKeymaps({
 			{ "x", "<c-w>q" },
 		},
 	},
+	{ "yo", {
+		{ "f", "<cmd>FocusToggle<cr>" },
+	} },
 	{ "gd", vim.lsp.buf.definition },
 	{ "gD", vim.lsp.buf.declaration },
 	{ "gi", vim.lsp.buf.implementation },
