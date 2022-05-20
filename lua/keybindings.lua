@@ -1,4 +1,7 @@
+local gitsigns = require("gitsigns")
+local neogit = require("neogit")
 local nest = require("nest")
+
 vim.g.yoinkIncludeDeleteOperations = 1
 
 local replace_termcodes = function(str)
@@ -37,7 +40,14 @@ nest.applyKeymaps({
 					{ "m", vim.lsp.buf.formatting_sync },
 				},
 			},
-			{ "g", "<cmd>tab G<cr>" },
+			{
+				"g",
+				{
+					{ "b", gitsigns.toggle_current_line_blame },
+					{ "g", "<cmd>tab G<cr>" },
+					{ "m", neogit.open },
+				},
+			},
 			{
 				"s",
 				{

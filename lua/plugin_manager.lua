@@ -43,6 +43,7 @@ return require("packer").startup(function()
 
 	-- Colorscheme
 	use({ "dracula/vim", as = "dracula" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Icon
 	use("kyazdani42/nvim-web-devicons")
@@ -64,7 +65,7 @@ return require("packer").startup(function()
 	-- Git
 	use({ "tpope/vim-fugitive" })
 	use({ "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim" })
-	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 
 	-- Comment
 	use("numToStr/Comment.nvim")
